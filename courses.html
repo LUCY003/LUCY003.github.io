@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Courses - LUCY ENYI</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Lucy</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a class="active" href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Courses Section ======= -->
+    <section id="courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Courses</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-12" data-aos="fade-up">
+
+            <input type="text" placeholder="Search Courses" id="filter" />
+
+            <ul id="list" data-aos="fade-up"></ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Courses Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Lucy</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    var courses_list = [
+      'JavaScript',
+      'MySql',
+      'PHP',
+      'HTML',
+      'CSS',
+      'Android Apps',
+      'Database management',
+      'Cpanel server',
+      'Web Security',
+      'Desktop Apps',
+      'Java',
+      'Python',
+      'Software development',
+      'Website design',
+      'Native Apps',
+      'WordPress'
+    ];
+
+    ul = document.getElementById("list");
+
+    var render_lists = function (lists) {
+      var li = "";
+      for (index in lists) {
+        li += "<li>" + lists[index] + "</li>";
+      }
+      ul.innerHTML = li;
+    }
+
+    render_lists(courses_list);
+
+    // lets filters it
+    input = document.getElementById('filter');
+
+    var results = function (event) {
+      keyword = input.value.toLowerCase();
+      filtered_courses = courses_list.filter(function (user) {
+        user = user.toLowerCase();
+        return user.indexOf(keyword) > -1;
+      });
+
+      render_lists(filtered_courses);
+    }
+
+    input.addEventListener('keyup', results);
+
+
+  </script>
+
+</body>
+
+</html>
